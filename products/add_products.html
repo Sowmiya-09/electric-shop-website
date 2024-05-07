@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add Products Details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nav.css">
+    <script src="sweetalert.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins";
+            font-weight: 600;
+            background: url(bg.jpg) no-repeat fixed 100% 100%;
+            background-size: cover;
+            height: 100vh;
+            align-items: center;
+        }
+        #container {
+            background-color: #ffffff; /* Background color for the form container */
+            width: 400px; /* Reduced width */
+            margin:0 auto; /* Center-align the container horizontally */
+            padding: 10px; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the container */
+            height: auto; /* Adjusted to auto for smaller height */
+        }
+
+        h1 {
+            color: #333; /* Heading color */
+            font-size: 16px; /* Reduced font size */
+            margin: 0 auto; /* Center-align the heading */
+            text-align: center; /* Center-align the text within the heading */
+            margin-bottom: 8px; /* Increased margin */
+        }
+
+        form {
+            text-align: left; /* Align form content to the left */
+        }
+
+        label {
+            display: block; /* Display labels in a block format */
+            margin-bottom: 4px; /* Reduced margin */
+            font-size: 12px; /* Reduced font size */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 4px; /* Reduced padding */
+            margin-bottom: 6px; /* Reduced margin */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px; /* Reduced font size */
+        }
+
+        .btn {
+            width: 48%; /* Set width to make both buttons 48% of container width */
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50; /* Green color for Add Medicine */
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #FF5733; /* Red color for Clear */
+            color: #fff;
+        }
+
+        .form-group.pull-right {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="name">
+        <header>
+          <div class="nav-wrapper">
+              <div class="logo-container">
+                  <img class="logo" src="shop1.png" alt="Logo">
+              </div>
+              <nav>
+                  <input class="hidden" type="checkbox" id="menuToggle">
+                  <label class="menu-btn" for="menuToggle">
+                      <div class="menu"></div>
+                      <div class="menu"></div>
+                      <div class="menu"></div>
+                  </label>
+                  <div class="nav-container">
+                      <ul class="nav-tabs">
+                          <li class="nav-tab" id="active"><a href="../home/nav.html" style="text-decoration: none; color: black;">Home</a></li>
+                          <li class="nav-tab"><a href="../products/add_products.html" style="text-decoration: none; color: black;">Add products</a></li>
+                          <li class="nav-tab"><a href="../products/view_products.php" style="text-decoration: none; color: black;">View products</a></li>
+                          <li class="nav-tab"><a href="../invoice/index.php" style="text-decoration: none; color: black;">Billing</a></li>
+                          <li class="nav-tab"><a href="../notification/notification.php" style="text-decoration: none; color: black;">Notification</a></li>
+                          <li class="nav-tab"><a href="../report/report.php" style="text-decoration: none; color: black;">Report</a></li>
+                          <li class="nav-tab"><a href="../Login and sign up/logout.php" style="text-decoration: none; color: black;">Logout</a></li>
+
+                      </ul>
+                  </div>
+              </nav>
+          </div>
+        </header>
+      </div>
+    <br>
+    <br>
+    <div id="container">
+        <h1>Add Products Details</h1>
+        <div class="container">
+        <form action="add_products.php" method="POST" autocomplete="off">
+           
+            <div class="form-group">
+            <label for="product_id"> Product ID:</label>
+            <input type="number" class="form-control" id="product_id" name="product_id" required><br>
+            </div>
+            <div class="form-group">
+            <label for="product_name">Product Name:</label>
+            <input type="text" class="form-control" id="product_name" name="product_name" required><br>
+            </div>
+            <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required><br>
+            </div>
+            <div class="form-group">
+            <label for="threshold_quantity">Threshold Quantity:</label>
+            <input type="number" class="form-control" id="threshold_quantity" name="threshold_quantity" required><br>
+            </div>
+            <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" step="0.01" required><br>
+            </div>
+            <div class="form-group pull-right">
+                <input type="submit" class="btn btn-primary" value="Add Product">
+                <input type="reset" class="btn btn-danger" value="Clear">
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
